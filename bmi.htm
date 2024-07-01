@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <title>BMI</title>
+		<style>
+		
+		body {
+			color: white;
+			background: #fc00ff;  
+			background: linear-gradient(to right, #00dbde, #fc00ff);
+			background-size:cover;
+		}
+		
+		h1{
+			padding-top:3px;
+			font-size: 50px;
+			text-shadow: 0 0 4px white;
+			text-align: center;
+		}
+
+		h2{
+			text-shadow: 0 0 4px white;
+			text-align: center;
+		}	
+		
+		div{
+			background-color: #f3e6e8;
+			background-image: linear-gradient(315deg, #f3e6e8 0%, #d5d0e5 74%);
+			border: 0;
+			border-radius: 8px;
+			box-shadow: rgba(151, 65, 252, 0.2) 0 25px 30px -5px;
+			height:250px;
+			width:520px;
+			padding: 3px;
+			font-size: 100px;
+			position: absolute;
+			top: 30%;
+			left: 28.5%;
+			padding-top: 1%;
+			padding-left: 4%;
+		}
+	
+		button.b {
+			width: 120px;
+			height: 40px;
+			border: 0;
+			box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+			border-radius: 50px;
+			background-color: rgba(0,0,0,0.6);
+			color: white;
+			text-shadow: 0 0 2px aqua;
+			font-family: "Times New Roman", serif;
+			cursor: pointer;
+			outline: none;
+			position: absolute;
+			top: 65%;
+			left: 50%;
+			transform: translate(-51.6%, -45%);
+		}
+		
+		input{
+			padding: 0.7em 2em;
+			font-size: 16px;
+			background: #222222;
+			width: 450px;
+			color: #fff;
+			border: none;
+			border-radius:10px;
+			padding:20px;
+			font-size: 20px;
+			font-family: "Times New Roman", serif;	
+		}
+		
+		button.b:hover{
+			background-color:#17C3B2;
+		}
+
+		label{
+			font-size: 20px;
+		}
+		
+		</style>
+	</head>
+    <body>
+        <h1><u>BMI-CALCULATOR</u></h1>
+        	<h2>(BODY MASS INDEX)</h2>
+            <div id="box">
+            	<label for="height">HEIGHT:</label><br>
+				<input type="text" id="height"  placeholder="Please Enter The Height" required></input><br>
+				<label for="weight">WEIGHT:</label><br>
+				<input type="text" id="weight" placeholder="Please Enter The Weight" required></input>
+			</div>
+			<button class="b" onclick="calculate()">CALCULATE</button>
+    <script>
+		function calculate(){
+			let h= document.getElementById("height").value;
+			let w= document.getElementById("weight").value;
+			let bmi = 0;
+			bmi = w/h*h;
+			ans="THE BMI IS:"+bmi;
+			window.alert(ans);
+			}
+	</script>
+    </body>
+</html>

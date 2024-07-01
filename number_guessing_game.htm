@@ -1,0 +1,124 @@
+<html>
+<head>
+<title>NUMBER-GUESSING-GAME</title>
+<style>
+	h1{
+		text-align: center;
+		color: white;
+		top: 20px;
+	}
+
+	#bg{
+		position: absolute;
+	    left: 0px;
+	    top: 0px;
+	    z-index: -1;
+    	width: 100%;
+    	height: 100%;
+    	filter: blur(3px);
+	}
+
+	#box{
+		padding: 8px;
+        font-size: 25px;
+		padding-top: 40px;
+        border-radius: 50px;
+		color: white;
+		background: #00B4DB; 
+		background: linear-gradient(to right, #0083B0, #00B4DB);
+		position: absolute;
+		top: 8%	;
+		opacity: 0.8;
+        box-shadow:  1px 1px 3px #9fc9d2,
+             -1px -1px 3px #d7ffff;
+        height: 300px;
+        left: 30%;
+        width: 550px;
+        margin-top: 100px;
+	}
+
+	input{
+		padding: 0.7em 2em;
+		font-size: 16px;
+		background: #222222;
+		width: 90px;
+		color: #fff;
+		border: none;
+		border-radius:10px;
+		padding:20px;
+		font-size: 20px;
+		font-family: "Times New Roman", serif;	
+	}
+
+	#score{
+		padding: 17px 40px;
+        border-radius: 5px;
+        border: 1px solid #34e89e;
+        margin-left: 88%;
+        color: white;
+        background-color: #222222;
+        box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+        font-size: 15px;
+        transition: all .5s ease;
+	}
+
+	button{
+            padding: 17px 40px;
+            border-radius: 10px;
+            border: 1px solid #34e89e;
+            margin: 4px;
+            color: white;
+            background-color: #222222;
+            box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+            font-size: 15px;
+            transition: all .5s ease;
+        }
+
+    button:hover {
+        letter-spacing: 3px;
+        background-color:  #23c483;
+        color: hsl(0, 0%, 100%);
+        box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    }
+</style>
+</head>
+<body>
+	<img src="D:\projects\images\beach.jpg" id="bg"></img>	
+	<h1>NUMBER-GUESSING-GAME</h1>
+	<span id="score">SCORE:0</span>
+	<div id="box">
+		<center>
+		<label for="values">Guess a Number between 0-10:</label><br>
+		<br>
+		<input type="number" id="num"><br>
+		<br>
+		<button id="check" onclick="check()">CHECK</button>
+		<button id="reset" onclick="reset()">RESET</button>
+		<div id="output"></div>
+		</center>
+	</div>
+<script>
+	let score = 0;
+	function check(){
+		let num=document.getElementById("num").value;
+		let n=Math.floor(Math.random() * 11);
+		
+		if(num==n){
+			document.getElementById("output").innerHTML = "YOUR GUESS IS CORRECT";
+			score++;
+		}
+		else{
+			document.getElementById("output").innerHTML = "YOUR GUESS IS NOT CORRECT" + "CORRECT ANSWER IS:"+ n;
+		}
+		document.getElementById("score").innerHTML="SCORE:"+score;
+	}
+
+	function reset(){
+		score = 0;
+		document.getElementById("num").value = "";
+		document.getElementById("output").innerHTML = "";
+		document.getElementById("score").innerHTML="SCORE:"+score;
+	}
+</script>
+</body>
+</html>

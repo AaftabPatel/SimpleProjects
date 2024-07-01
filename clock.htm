@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>clock</title>
+<style>
+body {
+    background: black;
+	color:white;
+}
+
+#clock {
+    position: absolute;
+    top: 50%;
+	padding:20px;
+    right: -5%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 120px;
+    font-family: Orbitron;
+    letter-spacing: 7px;
+	border:1px solid white;
+	color: #fff;
+	border-radius:20px;
+	text-shadow:0 0 5px #fff,0 0 10px #fff,0 0 20px #fff,0 0 40px #0ff,0 0 80px #0ff,0 0 90px #0ff,    0 0 150px #0ff;
+}
+#move{
+	width: 10px;
+	height: 8px;
+	background-color: red;
+	position:relative;
+	border-radius:20px;
+	left:300px; 
+	top:25%;
+	animation-name: box;
+	animation-duration: 2s;
+	animation-delay:0.1s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	
+}
+@keyframes box {
+	0%   {background-color:red; left:290px; top:24%;}
+	20% {background-color:cyan; left:400px; top:24%; width:200px;}
+	40% {background-color:cyan; left:1050px; top:24%; width:10px;}
+	50% {background-color:green; left:1050px; top:55%; width:10px;}
+	70% {background-color:pink; left:600px; top:55%; width:200px;}
+	80% {background-color:pink; left:290px; top:55%; width:10px;}	
+	100% {background-color:red; left:290px; top:25%; width:10px;}
+	}
+
+</style>
+</head>
+<body>
+<center><u><h1>CLOCK</u></h1></center>
+<div id="move"></div>
+<div  id = "clock" onload="currentTime()"></div>
+
+<script>
+function currentTime() {
+  let date = new Date(); 
+  let hh = date.getHours();
+  let mm = date.getMinutes();
+  let ss = date.getSeconds();
+  let session = "AM";
+
+  if(hh == 0){
+      hh = 12;
+  }
+  if(hh > 12){
+      hh = hh - 12;
+      session = "PM";
+   }
+
+   hh = (hh < 10) ? "0" + hh : hh;
+   mm = (mm < 10) ? "0" + mm : mm;
+   ss = (ss < 10) ? "0" + ss : ss;
+    
+   let time = hh + ":" + mm + ":" + ss + " " + session;
+
+  document.getElementById("clock").innerText = time; 
+  let t = setTimeout(function(){ currentTime() }, 1000);
+}
+currentTime();
+</script>
+</body>
+</html>

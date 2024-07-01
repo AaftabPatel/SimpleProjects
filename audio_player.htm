@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>Audio-Player</title>
+<style>
+	body{
+		background: #757F9A;  
+		background: linear-gradient(to right, #D7DDE8, #757F9A); 
+	}
+
+	div#box{
+		background: #134E5E;  
+		opacity: 0.8;
+		background: linear-gradient(to right, #71B280, #134E5E);
+		border: 0;
+		border-radius: 8px;
+		box-shadow: rgba(151, 65, 252, 0.2) 0 25px 30px -5px;
+		height: 45%;
+		width: 50%;
+		padding: 3px;
+		font-size: 100px;
+		position: absolute;
+		top: 20%;
+		left: 22%;		
+	}
+
+	#audio_img{
+		height: 85%;
+		width: 30%;
+		padding: 0.15em;
+		border-radius: 0.3em;
+		position: relative;
+	}
+	
+	#audio{
+		position: absolute;
+		top: 42%;
+		left: 35%;
+		width: 60%;
+	}
+</style>
+
+</head>
+<body>
+	
+	<div id="box">
+	
+			<img src="D:\projects\images\audio.jpg" alt="audio" id="audio_img">
+			<audio controls id="audio" src="_Agar_Tum_Sath_Ho__Alka_Yagnik,_A.R._Rehman,_Irshad_Kamil(128k).m4a">
+				
+				Your browser does not support the audio element.
+			</audio>
+	</div>
+
+</body>
+</html>

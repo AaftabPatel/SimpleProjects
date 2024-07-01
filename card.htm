@@ -1,0 +1,43 @@
+
+<html>
+<head>
+<title>card</title>
+<style>
+
+	img#ep_img{
+		  height: 400px;
+		  width: 300px;
+	}
+
+	#img_gradient:hover{
+		opacity: 0.4;
+		cursor: pointer;
+	}
+
+	/*image gradient class style*/
+	#img_gradient{
+	  position: absolute;
+	  height: 400px;
+	  top: 0;
+	  left: 0;
+	  width: 300px;
+	  display: block;
+	  background-size: cover;
+	}
+
+	/*image gradient effect*/
+	#img_gradient:after {
+	  content: '';
+	  position: absolute;
+	  top: 0; left: 0; bottom: 0; right: 0;
+	  background: linear-gradient(to top , red,transparent,white);
+	}
+	
+</style>
+</head>
+<body>
+	<div id="img_gradient">
+		<img src="D:\projects\anime_site\images\latest_ep_img1.png" id="ep_img">
+	</div>
+</body>
+</html>

@@ -1,0 +1,387 @@
+<html>
+<head>
+<title>NETFLIX</title>
+<style>
+	body{
+		background-color: rgba(0,0,0,1);
+		color: white;
+	}
+	
+
+	#container1{
+		width: 100%;
+		height: 100%;
+		position: relative;
+		text-align: center;
+	}
+
+	#content1{
+		position: relative;
+		top: 34%;
+		font-size: 1.5em;
+	}
+
+	input{
+		width: 30em;
+		height: 4em;
+		padding: 2em;
+		position: relative;
+		top: 1em;
+	}
+
+	#logo{
+		position: absolute;
+	    left: 2em;
+	    height: 5.5em;
+	    z-index: -1;
+	  }
+
+	#bg1{
+		position: absolute;
+	    left: 0px;
+	    opacity: 65%;
+	    top: 0px;
+	    box-shadow: inset 0 0 100px black;
+	    z-index: -1;
+    	width: 100%;
+    	height: 100%;
+	}
+
+	#signup{
+		background-color: #e50914;
+  		padding: 0.4em 1em;
+  		font-size: 1.2em;
+  		position: relative;
+  		right: 3em;
+  		top: 1em;
+  		float: right;
+  		border: none;
+  		color: white;
+  		border-radius: 0.3em;
+	}
+
+	#try1{
+		background-color: #e50914;
+  		padding: 0.33em 0.5em;
+  		font-size: 1.2em;
+  		border: none;
+  		height: 2.01em;	
+  		color: white;
+  		position: relative;
+		top: 0.62em;
+	}
+	
+	#try2{
+		background-color: #e50914;
+  		padding: 0.33em 0.5em;
+  		font-size: 1.2em;
+  		border: none;
+  		height: 3em;	
+  		color: white;
+  		position: relative;
+		top: 0.78em;
+	}	
+
+	hr{
+		border: 5px solid #282828;
+		margin-left: -5em;
+		width: 105.8%;
+	}
+
+	#bg2{
+		position: absolute;
+		right: 0;	
+		z-index: 1;
+		height: 30em;
+	}
+
+	#netflix_gif{
+		position: absolute;
+		top: 6em;
+		left: 49em;
+		height: 16.5em;
+		width: 29.2em;
+	}
+
+	#bg3,#bg5{
+		position: absolute;	
+		z-index: -1;
+	}
+
+	#container2{	
+		width: 100%;
+		min-height: 500px;
+		position: relative;
+		top: 0px;
+	}
+
+	#content2{
+		font-size: 1.5em	;
+		padding: 5em 4em;
+	}
+
+	#content4{
+		position: absolute;
+		margin-top: -10em;	
+		font-size: 1.5em	;
+		padding: 5em 4em;
+	}
+
+	#content3{
+		position: relative;
+		text-align: left;
+		margin-left: 25em;
+		font-size: 1.5em;
+		padding: 3em 4em;
+	}
+
+	#gif{
+		position: absolute;
+		width: 22em;
+		height: 5.2em;
+		left: 10em;
+		margin-top: 21em;
+		border: 0.2em solid #282828;
+		background-color: black;	
+		border-radius: 10px;
+		text-align: center;
+	}
+	#download_text{
+		position: relative;
+		padding: 2em;
+		top: -2em;
+		left: -1em;
+	}
+	
+	#stimg{
+		position: relative;
+		width: 4em;
+		height: 4.8em;
+		padding: 0.2em 0.1em;
+	}
+
+	#download_gif{
+		position: relative;
+		top: -1em;
+		border-radius: 50%;
+		height: 2.6em;
+		width: 2.8em;
+	}
+
+	#bg4{
+		position: absolute;
+		right: 0;	
+		z-index: 1;
+	}
+	
+	#sg_gif{
+		position: relative;
+		top: 2.9em;
+		left: 54.5em;
+		height: 13em;
+		width: 22.5em;
+	}
+
+	.drop{
+		font-size: 25px;
+		color: white;
+		text-align: left;
+		padding-left: 2em;
+		width: 38em;
+		border-radius: 5px;
+		height: 4em;
+		background-color: #282828;
+	}
+	button:hover{
+		cursor: pointer;
+	}
+	
+	.drop_content{
+		display: none;
+		font-size: 25px;
+		color: white;
+		width: 35.7em;
+		border-radius: 5px;
+		height: auto;
+		padding: 1em;
+		background-color: #282828;
+	}
+	
+	a{
+		color: grey;
+		text-decoration: none;
+	}
+
+	table{
+		cell-spacing: 5em;
+		padding: 20px;
+		border-spacing : 100px 5px;
+	}
+	
+	#last_container{
+		color: grey;
+		padding: 0em 10em;
+	}
+
+	#number{
+		position: relative;
+		left: 6em;
+	}
+
+</style>
+</head>
+<body>
+	<img src="D:\projects\images\netflixbg1.jpg" id="bg1" alt="collage image"></img>
+	<div id="container1">
+		<img src="D:\projects\images\netflix_logo.png" id="logo" alt="logo"></img>
+		<button id="signup">sign up</button>
+		<div id="content1">
+			<h1>Unlimited movies, TV<br>shows, and more.<h1>
+			<h3>Watch anywhere. Cancel anytime.</h3>
+			<h4>Ready to watch? Enter your email to create or access your account</h4> 
+			<input type="email" placeholder="Email Address"></input><button id="try1"> GET STARTED > </button>
+			
+		</div>
+	</div>
+	<hr id="line">
+	<div id="container2">
+		<img src="D:\projects\images\netflixbg2.png" id="bg2" alt="tv netflix"></img>
+		<img src="https://cdn.dribbble.com/users/1936906/screenshots/4240842/ezgif.com-optimize-2.gif" id="netflix_gif"></img>
+		<div id="content2">
+			<h1>Enjoy on your TV.</h1>
+			<h3> Watchx on Smart TVs, Playstation, Xbox,<br>
+			Chromecast, Apple TV, Blu-ray players, and<br>
+			more.</h3>
+		</div>
+	</div>
+	<hr id="line">
+
+	<div id="container2">
+		<img src="D:\projects\images\netflixbg3.jpg" id="bg3" alt="mobile netflix"></img>
+		<div id="gif"><img src="D:\projects\images\stranger_things.jpg" id="stimg" alt="stranger things"></img>
+			<span id="download_text">Downloading...</span>
+			<img src="https://thumbs.gfycat.com/LoathsomeWaryDugong-max-1mb.gif" id="download_gif" alt="downloading gif"></img>
+		</div>
+		<div id="content3">
+			<h1>Download your shows<br> to watch offline.</h1>
+			<h3> Save your favourites easily and always have<br> something to watch.</h3>
+		</div>
+	</div>
+	<hr id="line">
+
+	<div id="container2">
+		<img src="D:\projects\images\netflixbg4.png" id="bg4"></img>
+		<img src="https://media2.giphy.com/media/cIjWxVnBr0vJLD3YYu/giphy.gif" id="sg_gif"></img>
+		<div id="content4">
+			<h1>Watch everywhere.</h1>
+			<h3> Stream unlimited movies and TV shows on<br>
+			your phone, tablet, laptop, and TV without paying more.</h3>	
+		</div>
+	</div>
+	<hr id="line">
+
+	<div id="container2">
+		<img src="D:\projects\images\netflixbg5.jpg" id="bg5"></img>
+		<div id="content3">
+			<h1>Create profiles for children.</h1>
+			<h3> Send children on adventures with their <br>
+			favourite characters in a space made just for <br>
+			them—free with your membership.</h3>	
+		</div>
+	</div>
+	<hr id="line">
+
+	<center>
+	<h1>Frequently Asked Questions</h1>
+	<button onclick="show(id)" id="drop1" class="drop">What is Netflix?     +</button>
+	<div id="drop1_content" class="drop_content">
+		Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices.
+
+		You can watch as much as you want, whenever you want, without a single ad – all for one low monthly price. There's always 	something new to discover, and new TV shows and movies are added every week!
+	</div>
+	
+	<button onclick="show(id)" id="drop2" class="drop">How much does Netflix cost?	+</button>
+		<div id="drop2_content" class="drop_content">
+			Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from ₹ 149 to ₹ 649 a month. No extra costs, no contracts.
+		</div>
+	</div>
+	
+	<button onclick="show(id)" id="drop3" class="drop">Where can I watch?		+</button>
+		<div id="drop3_content" class="drop_content">
+			Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.
+
+			You can also download your favourite shows with the iOS, Android, or Windows 10 app. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere.
+		</div>
+	
+	
+	<button onclick="show(id)" id="drop4" class="drop">How do I cancel?	+</button>
+		<div id="drop4_content" class="drop_content">
+			Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account anytime.
+		</div>
+	
+	
+	<button onclick="show(id)" id="drop5" class="drop">What can I watch on Netflix?	+</button>
+		<div id="drop5_content" class="drop_content">
+			Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want.
+		</div>
+	</div>	
+
+	
+	<button onclick="show(id)" id="drop6" class="drop">Is Netflix good for kids?	+</button>
+		<div id="drop6_content" class="drop_content">
+			The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and films in their own space.
+
+			Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don’t want kids to see.
+		</div>
+
+	<h3>Ready to watch? Enter your email to create or restart your membership.</h3>
+	<input type="email" placeholder="Email Address"></input><button id="try2"> TRY 30 DAYS FREE </button>
+	
+	</center>
+	<br><br>
+	<hr id="line">
+
+	<div id="last_container">
+	<h3 id="number">Questions? Call 000-800-040-1843</h3>
+	<table>
+		<tr>
+			<td><a href="#FAQ">FAQ</a></td>
+			<td><a href="#Help">Help Centre</a></td>
+			<td><a href="#Account">Account</a></td>
+			<td><a href="#Media">Media Centre</a></td>
+		</tr>
+		<tr>
+			<td><a href="#Investor">Investor Relations</a></td>
+			<td><a href="#Jobs">Jobs</a></td>
+			<td><a href="#Ways">Ways to Watch</a></td>
+			<td><a href="#Terms">Terms of Use</a></td>
+		</tr>
+		<tr>
+			<td><a href="#Privacy">Privacy</a></td>
+			<td><a href="#Cookie">Cookie Preferences</a></td>
+			<td><a href="#Corporate">Corporate Information</a></td>
+			<td><a href="#Contact">Contact Us</a></td>
+		</tr>
+		<tr>
+			<td><a href="#Speed">Speed Test</a></td>
+			<td><a href="#Legal">Legal Notices</a></td>
+			<td><a href="#Only">Only on Netflix</a></td>
+		</tr>
+	</table>
+	<h5>Netflix India</h5>
+	</div>
+
+<script>
+	function show(id) {
+	 	let x = document.getElementById(id+"_content");
+		if (x.style.display === "none") {
+	    	x.style.display = "block";
+	  	} 	
+	  	else {
+	    	x.style.display = "none";
+	  	}
+	}
+</script>
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+<html>
+<head>
+<title>Multiple slideshow</title>
+<style>
+	body{
+		background-color: #121212;
+	}
+
+	#trending{
+		padding: 1em;
+	}
+
+	/*image card style*/
+    div.card{
+    	position: relative;
+    	display: none;
+    	top: 3em;
+    	left: -1em;
+    	margin-left: 2em;
+    	border-radius: 1em 0.1em;
+    	height: 12em;
+    	padding-right: 0.7em;
+    	width: 10em;
+    	background-color: white;
+    }
+
+    /*card image style*/
+    img#card_img{
+    	height: 12em;
+    	width: 9em;
+    	position: relative;
+    	top: -1.1em;
+    	padding-left: 2em;
+    }
+	
+	span#name{
+		writing-mode: vertical-lr;
+        transform: rotate(-180deg);
+        position: absolute;
+        overflow: hidden;
+        bottom: 2em;
+        display: block;
+        width: 1em;
+    }
+
+    span#trending_no{
+    	position: relative;
+    	left: 0.2em;
+    	top: 11em;
+    	color: red;
+    }
+
+     /* Next & previous buttons */
+    a#change_slide{
+    	position: relative;
+    	cursor: pointer;
+    	background-color: red;
+	    padding: 0.8em;
+	    color: white;
+	    font-weight: bold;
+	    transition: 0.6s ease;
+	    border-radius: 0.2em;
+    }
+
+    a#change_slide:hover{
+    	background-color: white;
+    	color: red;
+    }
+
+    /*positioning next card button*/
+    a.next_card{
+    	top: -2em;
+    	left: 90%;
+    	font-size: 1.5em;
+    }
+
+    /*positioning prev card button*/
+    a.prev_card{
+    	top: -5em;
+    	left: 94%;
+    	font-size: 1.5em;
+    }
+
+</style>
+</head>
+<body>
+	
+<div id="trending">
+		
+		<div class="card">
+			<span id="name">one piece</span>
+			<span id="trending_no">01</span>
+			<img src="D:\projects\anime_site\images\card_img1.jpg" id="card_img">
+		</div>
+		<div class="card">
+			<span id="name">kaguya sama love is war</span>
+			<span id="trending_no">02</span>
+			<img src="D:\projects\anime_site\images\card_img2.jpg" id="card_img">
+		</div>
+		<div class="card">
+			<span id="name">classroom of the elite</span>
+			<span id="trending_no">03</span>
+			<img src="D:\projects\anime_site\images\card_img3.png" id="card_img">
+		</div>
+		<div class="card">
+			<span id="name">rent a girlfriend season 2</span>
+			<span id="trending_no">04</span>
+			<img src="D:\projects\anime_site\images\card_img4.png" id="card_img">
+		</div>
+		<div class="card">
+			<span id="name">overlord IV</span>
+			<span id="trending_no">05</span>
+			<img src="D:\projects\anime_site\images\card_img5.jpg" id="card_img">
+		</div>
+		<div class="card">
+			<span id="name">spy x family</span>
+			<span id="trending_no">06</span>
+			<img src="D:\projects\anime_site\images\card_img6.jpg" id="card_img">
+		</div>
+		<div class="card">
+			<span id="name">The Yakuza's Guide to Babysitting</span>
+			<span id="trending_no">07</span>
+			<img src="D:\projects\anime_site\images\card_img7.jpg" id="card_img">
+		</div>
+		<div class="card">
+			<span id="name">Made in Abyss: The Golden City of the Scorching Sun</span>
+			<span id="trending_no">08</span>
+			<img src="D:\projects\anime_site\images\card_img8.jpg" id="card_img">
+		</div>
+		<div class="card">
+			<span id="name">Vermeil in Gold</span>
+			<span id="trending_no">09</span>
+			<img src="D:\projects\anime_site\images\card_img9.jpg" id="card_img">
+		</div>
+		<div class="card">
+			<span id="name">Harem in the Labyrinth of Another World</span>
+			<span id="trending_no">10</span>
+			<img src="D:\projects\anime_site\images\card_img10.jpg" id="card_img">
+		</div>
+	</div>
+		<a id="change_slide" class="prev_card" onclick="plusCard(-1)">❮</a>
+	    <a id="change_slide" class="next_card" onclick="plusCard(1)">❯</a>	    
+
+<script>
+	let cardIndex = 6;
+	showCard(cardIndex);
+
+	// Next/previous controls
+	 function plusCard(n) {
+        showCard(cardIndex += n);
+    }
+
+    //current cards
+    function currentCard(n) {
+        showCard(cardIndex = n);
+    }
+    
+    //show cards
+    function showCard(n) {
+        let i;
+        let cards = document.getElementsByClassName("card");
+        
+        if (n > cards.length) {cardIndex = cards.length;}    
+        if (n < 6) {cardIndex = 6;}
+        /*to display all as none*/
+        for (i = 0; i < cards.length; i++) {
+            cards[i].style.display = "none";  
+        }
+        /*to set all visible cards as inline-block*/
+        for (i = cardIndex-6; i < cardIndex; i++) {
+            cards[i].style.display = "inline-block";  
+        } 
+    }
+</script>
+</body>
+</html>

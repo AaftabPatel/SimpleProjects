@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <title>Todo App</title>
+    <style>
+      body{
+        background: linear-gradient(to top left, #34e89e, white, #34e89e); 
+      }
+
+      h1{
+        
+        color: white;
+      }
+
+      div.box{
+        padding: 4px;
+        border-radius: 16px;
+        background: #34e89e; 
+        background: linear-gradient(to left top, #0f3443, #34e89e); 
+        box-shadow:  10px 10px 30px #9fc9d2,
+             -10px -10px 30px #d7ffff;
+        height: 400px;
+        width: 550px;
+        text-align: center;
+        margin-top: 100px;
+      }
+
+      input{
+        width: 450px;
+        height: 35px;
+        border: 0;
+        border-radius: 5px;
+        background-color: rgba(0,0,0,0.7);
+        color: white;
+        font-size: 20px;
+        font-family: "Times New Roman", serif;
+        outline: none;
+      }
+      #b{
+        width: 45px;
+        height: 35px;
+        cursor: pointer;
+      }
+    #b:hover{
+      background-color: white;
+      color: black;
+    }
+    
+    ol{
+      color: white;
+      font-size: 25px;
+      text-align: left;
+    }
+    </style>
+  </head>
+  <body>
+    <center>
+    <div class="box">
+      <h1>TO-DO-LIST</h1>
+        <input type="text" id="val" placeholder="Add new task..." required></input>
+        <input type="button" id="b" onclick="addTask();return false" value="+"></input>
+        <ol id="myList"   type="1">
+        </ol>
+    </div>
+  </center>
+  <script >
+    let count=0;
+    function addTask() {
+      if(count<9){
+        count++;
+        const node = document.createElement("li");
+        let note = document.getElementById("val").value;
+        const textnode = document.createTextNode(note);
+        node.appendChild(textnode);
+        document.getElementById("myList").appendChild(node);
+      }
+
+    }
+	</script>
+
+  </body>
+</html>

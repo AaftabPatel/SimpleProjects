@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    .box{
+        background: linear-gradient(to top left, #34e89e, white, #34e89e); 
+        width: 800px;
+        height: 500px;
+    }
+    .card{
+        background: #00C9FF;
+        background: linear-gradient(to right, #92FE9D, #00C9FF);
+        width: 200px;
+        height: 200px;
+        display: block;
+        position: absolute;
+        color: white;
+        font-size: 50px;
+        border: none;
+        transition: all 1s ease;
+    }
+    .flip{
+        transform: rotateY(180deg);
+        background: #000000;  
+        background: linear-gradient(to right, #e74c3c, #000000); 
+        width: 200px;
+        display: block;
+        height: 200px;
+        border: none;
+        color: white;
+        font-size: 50px;
+    }
+    
+    </style>
+</head>
+<body>
+    <center>
+    <div class="box">
+        <h1 id="h">CARD GAME</h1>
+        <input type="button" id="1" class="card" onclick="flip(id)" style="left: 30%;top: 80px;"></input>
+        <input type="button" id="2" class="card" onclick="flip(id)" style="left: 55%;top: 80px;"></input>
+        <input type="button" id="3" class="card" onclick="flip(id)" style="left: 30%;top: 300px;"></input>
+        <input type="button" id="4" class="card" onclick="flip(id)" style="left: 55%;top: 300px;"></input>
+    </div>
+</center>
+    <script src="cardscript.js"></script> 
+</body>
+</html>

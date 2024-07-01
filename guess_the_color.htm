@@ -1,0 +1,109 @@
+<html>
+<head>
+<title>random colour</title>
+<style>
+	body{
+		background: #00C9FF;
+		background: linear-gradient(to right, #92FE9D, #00C9FF);
+	}
+	.b{
+		color: black;
+		width: 200px;
+		height: 200px;
+		margin: 30px;
+		border: 2px outset mintcream;
+		border-radius: 20px;
+	}
+	#b0{background-color: rgb(256,0,0);}
+	#b1{background-color: rgb(0, 0,256);}
+	#b2{background-color: rgb(0,256, 0);}
+
+	button.newc {
+				width: 200px;
+				height: 40px;
+				border: 0;
+				font-size: 30px;
+				box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+				border-radius: 50px;
+				background-color: rgba(0,0,0,0.6);
+				color: white;
+				text-shadow: 0 0 2px aqua;
+				font-family: "Times New Roman", serif;
+				cursor: pointer;
+				outline: none;
+			}
+	button.newc:hover{
+		background-color: crimson;
+	}
+</style>
+</head>
+<body>
+	<center>
+	<div class="box">
+		<h1>GUESS THE COLOUR</h1>
+		<h2><span id="c">rgb(256,0,0)</span><span id="score"></span></h2>
+		<div id="res"></div>
+		<button id="b0" class="b" onclick="check(id)">color</button>
+		<button id="b1" class="b" onclick="check(id)">color</button>
+		<button id="b2" class="b" onclick="check(id)">color</button><br>
+		<button class="newc" onclick="change()">NEXT</button>
+	</div>
+	</center>
+
+<script>
+	let score=0;
+	let chance=1;
+	let start=1;
+	let correct="rgb(256,0,0)";
+
+	function random_color() {
+		let a=(Math.floor(Math.random() * 257));
+		let b=(Math.floor(Math.random() * 257));
+		let c=(Math.floor(Math.random() * 257));
+		let bg= "rgb("+a+","+b+","+c+")";
+		return bg;
+	}
+	function change() {
+		let bg1=random_color();
+		let bg2=random_color();
+		let bg3=random_color();
+		document.getElementById("b0").style.backgroundColor=bg1;
+		document.getElementById("b1").style.backgroundColor=bg2;
+		document.getElementById("b2").style.backgroundColor=bg3;
+		document.getElementById("res").innerHTML="";
+		chance=1;
+		colour();
+	}
+
+	function colour() {
+		let c=Math.floor(Math.random()*3);
+		if(c==0)
+			correct=document.getElementById("b0").style.backgroundColor;
+		else if(c==1)
+			correct=document.getElementById("b1").style.backgroundColor;
+		else if(c==2)
+			correct=document.getElementById("b2").style.backgroundColor;
+		document.getElementById("c").innerHTML=correct;
+		document.getElementById("score").innerHTML=" | score:"+score;
+
+	}
+	function check(id) {
+			if(chance==1){
+				chance--;
+				element=document.getElementById(id);
+				if(start==1 && id=="b0"){
+					document.getElementById("res").innerHTML="CORRECT";
+					score++;
+					start--;
+				}
+				else if(element.style.backgroundColor==correct){
+					document.getElementById("res").innerHTML="CORRECT";
+					score++;
+				}
+				else
+					document.getElementById("res").innerHTML="INCORRECT";
+			}
+	}
+</script>
+</body>
+</html>

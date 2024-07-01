@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <title>Stopwatch</title>
+		<style>
+		
+		body {
+			color: white;
+			background-repeat:no-repeat;
+			background-size:cover;
+		}
+		
+		div{
+			background-color: #f3e6e8;
+			background-image: linear-gradient(315deg, #f3e6e8 0%, #d5d0e5 74%);
+			border: 0;
+			text-shadow: 0 0 8px aqua;
+			font-family: "Times New Roman", serif;
+			border-radius: 8px;
+			box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+			font-size: 30px;
+			justify-content: center;
+			text-align: center;
+			line-height: 2em;
+			width:600px;
+			padding: 3px;
+		}
+	
+		button {
+			width: 100px;
+			height: 30px;
+			border: 0;
+			box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+			border-radius: 50px;
+			background-color: rgba(0,0,0,0.6);
+			color: white;
+			text-shadow: 0 0 2px aqua;
+			font-family: "Times New Roman", serif;
+			cursor: pointer;
+			outline: none;
+		}
+		
+		h1{
+			padding-top:30px;
+			font-size: 50px;
+			text-shadow: 0 0 5px aqua;
+			text-align: center;
+		}	
+		
+		#stopwatch {
+			font-size: 100px;
+			position: absolute;
+			top: 40%;
+			left: 50%;
+			transform: translate(-50%, -55%);
+		}
+		
+		#buttons {
+			position: absolute;
+			top: 48%;
+			left: 48.4%;
+			transform: translate(-51.6%, -45%);
+		}
+		
+		#buttons li {
+			display: inline;
+			padding-left: 10px;
+		}
+		</style>
+	</head>
+    <body background="images\stopwatch.jpg">
+        <h1><u>STOPWATCH</u></h1>
+		<div id="stopwatch">
+            00:00:00:00
+        </div>
+
+        <ul id="buttons">
+            <li><button onclick="startTimer()">START</button></li>
+            <li><button onclick="stopTimer()">STOP</button></li>
+            <li><button onclick="resetTimer()">RESET</button></li>
+        </ul>
+
+        <script src="watch.js"></script>
+    </body>
+</html>

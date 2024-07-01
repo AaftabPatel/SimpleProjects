@@ -1,0 +1,35 @@
+<html>
+<head>
+<title></title>
+<style>
+	.card{
+		background: #00C9FF;
+		background: linear-gradient(to right, #92FE9D, #00C9FF);
+		width: 200px;
+		height: 200px;
+		border: none;
+		transition: all 1s ease;
+	}
+	.flip{
+		transform: rotateY(180deg);
+		background: #000000;  
+		background: linear-gradient(to right, #e74c3c, #000000); 
+		width: 200px;
+		height: 200px;
+		border: none;
+	}
+</style>
+</head>
+<body>
+	<center>
+	<h1>FLIP CARD</h1>
+	<input type="button" id="c1" class="card" onclick="flip()"></input>
+	</center>
+<script>
+	function flip() {
+	  var element = document.getElementById("c1");
+	  element.classList.toggle("flip");
+	}
+</script>
+</body>
+</html>

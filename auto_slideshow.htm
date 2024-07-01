@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>AutoSlideshow</title>
+<style>
+	
+	.slideshow {
+	  max-width: 800px;
+	  position: relative;
+	  margin: auto;
+	}
+
+	.slide {
+	  display: none;
+	}
+
+	.slide img {
+	  width: 100%;
+	  height: auto;
+	}
+
+</style>
+</head>
+<body>
+
+	<div id = "slot1" class = "slot">
+		<div id = "slideshow">
+			<div class = "slide">
+				<img src="ssImages/ssImg1.jpg" id="slide_img" alt = "Donate">
+			</div>
+			<div class = "slide">
+				<img src="ssIimages/ssImg2.jpg" id="slide_img" alt = "Donate">
+			</div>
+			<div clas = "slide">
+				<img src="ssIimages/ssImg3.jpg" id="slide_img" alt = "Donate">
+			</div>
+			
+		</div>
+	</div>
+	
+
+<script>
+	var slideIndex = 0;
+	showSlides();
+
+	function showSlides() {
+	  var i;
+	  var slides = document.getElementsByClassName("slide");
+	  for (i = 0; i < slides.length; i++) {
+		  slides[i].style.display = "none";
+	  }
+	  slideIndex++;
+	  if (slideIndex > slides.length) {slideIndex = 1}
+	  slides[slideIndex-1].style.display = "block";
+	  setTimeout(showSlides, 2000); // Change image every 2 seconds
+	}
+</script>
+</body>
+</html>

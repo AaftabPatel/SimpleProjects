@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>vignette</title>
+<style>
+	body{
+		background: #121212;
+	}
+
+	#slide_img{
+		position: absolute;
+		height: 50%;
+		width: 50%;
+	}
+
+	#vignette{
+	  position: absolute;
+	  height: 50%;
+	  width: 50%;
+	  display: block;
+	  z-index: 1;
+	  background-size: cover;
+	}
+
+	#vignette:after {
+	  content: '';
+	  position: absolute;
+	  top: 0; left: 0; bottom: 0; right: 0;
+	  background: radial-gradient(at 70%, transparent -5%, black 130%);
+	}
+</style>
+</head>
+<body>
+
+<div id="vignette">
+</div>	
+<img src="D:\projects\anime_site\images\my_stepsister_is_my_ex.jpg" id="slide_img">
+</body>
+</html>

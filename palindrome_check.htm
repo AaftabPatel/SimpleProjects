@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title>palindrome</title>
+		<style>
+		
+		body {
+			color: white;
+			background-color:#17C3B2;
+			background-repeat:no-repeat;
+			background-size:cover;
+		}
+		
+		h1{
+			padding-top:30px;
+			font-size: 50px;
+			text-shadow: 0 0 4px white;
+			text-align: center;
+		}	
+		
+		div{
+			background-color: #f3e6e8;
+			background-image: linear-gradient(315deg, #f3e6e8 0%, #d5d0e5 74%);
+			border: 0;
+			border-radius: 8px;
+			box-shadow: rgba(151, 65, 252, 0.2) 0 25px 30px -5px;
+			height:250px;
+			width:600px;
+			padding: 3px;
+			font-size: 100px;
+			position: absolute;
+			top: 20%;
+			left: 28.5%;
+			
+		}
+	
+		input.b {
+			width: 100px;
+			height: 30px;
+			border: 0;
+			box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+			border-radius: 50px;
+			background-color: rgba(0,0,0,0.6);
+			color: white;
+			text-shadow: 0 0 2px aqua;
+			font-family: "Times New Roman", serif;
+			cursor: pointer;
+			outline: none;
+			position: absolute;
+			top: 48%;
+			left: 50%;
+			transform: translate(-51.6%, -45%);
+		}
+		
+		#val{
+			padding: 0.7em 2em;
+			font-size: 16px;
+			background: #222222;
+			width: 400px;
+			color: #fff;
+			border: none;
+			border-radius:10px;
+			padding:20px;
+			font-size: 20px;
+			font-family: "Times New Roman", serif;
+			position: absolute;
+			top: 80px;
+			left: 18%;
+		}
+		
+
+		input.b:hover{
+			background-color:#17C3B2;
+		}
+		
+		</style>
+	</head>
+    <body>
+        <h1><u>PALINDROME-CHECKER</u></h1>
+            <div id="box">
+				<input type="text" id="val" placeholder="Please Enter The Value To Check" required></input>
+			</div>
+			<input type="button" class="b" value="CHECK" onclick="check()"></input>
+    <script>
+		function check(){
+			let value= document.getElementById("val").value;
+			function checkPalindrome(str) {
+				const len = str.length;
+				for (let i = 0; i < len / 2; i++) {
+					if (str[i] !== str[len - 1 - i]) {
+						return ' is not a palindrome';
+					}
+				}
+				return ' is a palindrome';
+			}
+			
+			const result = checkPalindrome(value);
+			res=value+result;
+			window.alert(res);
+			document.getElementById("val").value="";
+			}
+	</script>
+    </body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Landing</title>
+<link rel = "icon" type = "image" href="ssImages/ssLogo_nobg.png">
+<style>
+	body{
+		/*logo green code:#0c3343*/
+		background-color: rgba(255,215,0,0.8);
+	}
+	
+	/* effect div*/
+	#effect{
+		background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.8) 100%);
+		/*background-color: rgba(256,256,256,0);*/
+		height: 100%;
+		width: 100%;
+		left : 0;
+		position: absolute;
+		top: 0;
+	}
+	
+	/*slots positioning*/
+	#slot1{
+		position: absolute;
+		top: 0%;
+		left: 0%;
+	}
+	#slot2{
+		position: absolute;
+		top: 0%;
+		left: 50%;
+	}
+	#slot3{
+		position: absolute;
+		top: 50%;
+		left: 0%;
+	}
+	#slot4{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+	}
+	
+	/*slideshow css*/
+	.slideshow {
+	  max-width: 200px;
+	  position: relative;
+	  margin: auto;
+	  transition: opacity 1s ease;
+	}
+
+	.slide {
+	  display: none;
+	}
+
+	.slide img {
+	  width: 42em;
+	  height: 19em;
+	  object-fit: cover;
+	}
+	
+	/*logo css*/
+	#logo{
+		position: absolute;
+		top: 40%;
+		left: 45.5%; 
+		background-color : white;
+	}
+	
+	#logo img{
+		width: 7em;
+		border : 2px solid #FFD700;
+	}
+
+</style>
+</head>
+<body>
+	
+	<!-- slideshows -->
+	<div id="slot1" class="slot">
+		<div class="slideshow1">
+			<div class="slide">
+				<img src="Images/beach.jpg" alt="Slide 1">
+			</div>
+			<div class="slide">
+				<img src="Images/blue_feather.jpg" alt="Slide 2">
+			</div>
+			<div class="slide">
+				<img src="Images/hourglass.jpg" alt="Slide 3">
+			</div>
+		</div>
+	</div>
+	
+	<div id="slot2" class="slot">
+		<div class="slideshow2">
+			<div class="slide">
+				<img src="Images/flower2.jpg" alt="Slide 1">
+			</div>
+			<div class="slide">
+				<img src="Images/beach.jpg" alt="Slide 2">
+			</div>
+			<div class="slide">
+				<img src="Images/blue_feather.jpg" alt="Slide 3">
+			</div>
+		</div>
+	</div>
+	
+	<div id="slot3" class="slot">
+		<div class="slideshow3">
+			<div class="slide">
+				<img src="Images/hourglass.jpg" alt="Slide 1">
+			</div>
+			<div class="slide">
+				<img src="Images/flower2.jpg" alt="Slide 2">
+			</div>
+			<div class="slide">
+				<img src="Images/beach.jpg" alt="Slide 3">
+			</div>
+		</div>
+	</div>
+	
+	<div id="slot4" class="slot">
+		<div class="slideshow4">
+			<div class="slide">
+				<img src="Images/blue_feather.jpg" alt="Slide 1">
+			</div>
+			<div class="slide">
+				<img src="Images/hourglass.jpg" alt="Slide 2">
+			</div>
+			<div class="slide">
+				<img src="Images/flower2.jpg" alt="Slide 3">
+			</div>
+		</div>
+	</div>
+	
+	<!-- div effect -->
+	<div id = "effect"></div>
+	
+	<div id = "logo">
+		<img src = "Images/a.jpg" alt = "logo">
+	</div>
+
+<script>
+	let slideIndex1 = 0;
+	let slideIndex2 = 0;
+	let slideIndex3 = 0;
+	let slideIndex4 = 0;
+	showSlides1();
+	showSlides2();
+	showSlides3();
+	showSlides4();
+
+	function showSlides1() {
+	  let i;
+	  let slides = document.querySelectorAll(".slideshow1 .slide");
+	  for (i = 0; i < slides.length; i++) {
+		  slides[i].style.display = "none";
+	  }
+	  slideIndex1++;
+	  if (slideIndex1 > slides.length) {slideIndex1 = 1}
+	  slides[slideIndex1-1].style.display = "block";
+	  setTimeout(showSlides1, 3000);
+	}
+
+	function showSlides2() {
+	  let i;
+	  let slides = document.querySelectorAll(".slideshow2 .slide");
+	  for (i = 0; i < slides.length; i++) {
+		  slides[i].style.display = "none";
+	  }
+	  slideIndex2++;
+	  if (slideIndex2 > slides.length) {slideIndex2 = 1}
+	  slides[slideIndex2-1].style.display = "block";
+	  setTimeout(showSlides2, 4000);
+	}
+
+	function showSlides3() {
+	  let i;
+	  let slides = document.querySelectorAll(".slideshow3 .slide");
+	  for (i = 0; i < slides.length; i++) {
+		  slides[i].style.display = "none";
+	  }
+	  slideIndex3++;
+	  if (slideIndex3 > slides.length) {slideIndex3 = 1}
+	  slides[slideIndex3-1].style.display = "block";
+	  setTimeout(showSlides3, 5000);
+	}
+
+	function showSlides4() {
+	  let i;
+	  let slides = document.querySelectorAll(".slideshow4 .slide");
+	  for (i = 0; i < slides.length; i++) {
+		  slides[i].style.display = "none";
+	  }
+	  slideIndex4++;
+	  if (slideIndex4 > slides.length) {slideIndex4 = 1}
+	  slides[slideIndex4-1].style.display = "block";
+	  setTimeout(showSlides4, 6000);
+	}
+
+</script>
+</body>
+</html>

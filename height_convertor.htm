@@ -1,0 +1,109 @@
+<html>
+<head>
+<title>HEIGHT CONVERTOR</title>
+<style>
+	body{
+		font-size: 20px;
+	}
+	#bg{
+		position: absolute;
+	     left: 0px;
+	     top: 0px;
+	     z-index: -1;
+    		width: 100%;
+    		height: 100%;
+    		filter: blur(3px);
+	}
+	div#box{
+		padding: 8px;
+        	padding-top: 40px;
+        	border-radius: 50px;
+		color: white;
+		background: #3494E6; 
+		background: linear-gradient(to right, #EC6EAD, #3494E6); 
+		position: absolute;
+		top: 8%	;
+		opacity: 0.9;
+        	box-shadow:  1px 1px 3px #9fc9d2,
+             -1px -1px 3px #d7ffff;
+        	height: 400px;
+        	left: 30%;
+        	width: 550px;
+        	margin-top: 100px;
+	}
+
+	h1{
+		position: absolute;
+		top: 5%;
+		color: white;
+		left: 35%;
+		text-shadow:0 0 5px #fff,0 0 10px #fff,0 0 20px #fff,0 0 40px #0ff,;
+	}
+
+	input,select{
+		padding: 0.7em 2em;
+			font-size: 16px;
+			background: #222222;
+			width: 380px;
+			color: #fff;
+			border: none;
+			border-radius:10px;
+			padding:20px;
+			font-size: 20px;
+			font-family: "Times New Roman", serif;	
+	}
+	#output{
+		font-size: 40px;
+		padding-top: 20px;
+	}
+</style>
+</head>
+<body>
+	<img src="D:\projects\images\vice_city.jpg" id="bg"></img>	
+	<center>
+		<h1><u>HEIGHT CONVERTOR</u></h1>
+		<div id="box">
+		<label for="values">Enter the value to convert:</label><br>
+		<input id="value" value="Enter value to convert in cm:" onclick="clear_val()"></input><br>
+		<label for="unit">Choose a unit:</label><br>
+		<select id="unit" name="unit" onchange="convert()">
+		  <option value=" "> </option>
+		  <option value="Meter">Meter</option>
+		  <option value="Inches">Inches</option>
+		  <option value="Feet">Feet</option>
+		</select>
+		<div id="output"></div>
+		</div>
+	</center>
+
+<script>
+	function clear_val(){
+		document.getElementById("value").value="1";
+	}
+	
+	function convert() {
+		let val=document.getElementById("value").value;
+		let unit=document.getElementById("unit").value;
+		let ans=0;
+
+		if(unit=="Meter"){
+			ans = val/1000;
+			document.getElementById("output").innerHTML = ans+" meters";
+		}
+		else if(unit=="Inches"){
+			ans = val*0.393701;
+			document.getElementById("output").innerHTML = ans+" Inches";
+		}
+		else if(unit=="Feet"){
+			ans = val*0.0328084;
+			document.getElementById("output").innerHTML = ans+" Feet";
+		}
+		else{
+			ans = val;
+			document.getElementById("output").innerHTML = ans;
+		}
+	}
+
+</script>
+</body>
+</html>

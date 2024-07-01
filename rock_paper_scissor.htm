@@ -1,0 +1,118 @@
+<html>
+<head>
+<style>
+	body{
+		background-color:#8cabd9;
+	}
+	input{
+		height:220px;
+		width:220px;
+		border-radius:50%;
+	}
+	.b1{
+		position:absolute;
+		top:120px;
+		left:350px;
+		border:20px solid red;
+	}
+	.b2{
+		position:absolute;
+		top:120px;
+		left:760px;
+		border:20px solid blue;
+	}
+	.b3{
+		position:absolute;
+		top:350px;
+		left:550px;
+		border:20px solid green;
+	}
+	div{
+		font-size:30px;
+		text-align:center;
+		background-color:white;
+	}
+	
+	button{
+		padding: 0.8em 1.8em;
+		border: 2px solid #17C3B2;
+		position: absolute;
+		right:5px;
+		background-color:rgba(0,0,0,0.7);
+		border-radius:25px;
+		overflow: hidden;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 16px;
+		transition: .3s;
+		z-index: 1;
+		font-family: inherit;
+		color: #17C3B2;
+	}
+
+	button::before {
+		content: '';
+		width: 0;
+		height: 420%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) rotate(45deg);
+		background: #17C3B2;
+		transition: .5s ease;
+		display: block;
+		z-index: -1;
+	}
+
+	button:hover::before {
+		width: 105%;
+	}
+
+	button:hover {
+		color: #111;
+	}
+	
+	.dark-mode {
+	  background-color: black;
+	  color: white;
+	}
+	
+</style>
+</head>
+<body>
+<button onclick="myFunction()">Dark/light</button>
+<center><h1><u>ROCK-PAPER-SCISSOS</u></h1></center>
+<input type="image" src="D:\projects\images\rock.jpg " id="1" class="b1" value="rock" onclick="clk(id)">
+<input type="image" src="D:\projects\images\paper.jpg " id="2" class="b2" value="paper" onclick="clk(id)">
+<input type="image" src="D:\projects\images\scissor.jpg " id="3" class="b3" value="scissor" onclick="clk(id)">
+<div id='d'>MAKE YOUR CHOICE</div>
+<script>
+	function val(ch){
+	let p="";
+	if(ch==0)
+		p="rock";
+	else if(ch==1)
+		p="paper";
+	else
+		p="scissor";
+	return p;
+	}
+	function clk(id){
+		let ch2=val(Math.floor(Math.random() * 3));
+		let ch1=document.getElementById(id).value;
+		if((ch1=="rock" && ch2=="scissor") || (ch1=="paper" && ch2=="rock") || (ch1=="scissor" && ch2=="paper"))
+			window.alert("CONGRATULATIONS YOU WIN");
+		else if((ch2=="rock" && ch1=="scissor") || (ch2=="paper" && ch1=="rock") || (ch2=="scissor" && ch1=="paper"))
+			window.alert("YOU LOSE  BETTER LUCK NEXT TIME");
+		else
+			window.alert("DRAW");
+		
+		document.getElementById("d").style.color="red";
+	}
+	function myFunction() {
+	   var element = document.body;
+	   element.classList.toggle("dark-mode");
+	}
+</script>
+</body>
+</html>

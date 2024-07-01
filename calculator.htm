@@ -1,0 +1,118 @@
+<!DOCTYPE html>  
+<html lang = "en">  
+<head>  
+<title> Calculator </title>  
+<style>  
+
+img.bg{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    filter: blur(3px);
+}
+h1 {  
+    text-align: center;  
+    padding: 23px;  
+    background-color: black;  
+    color: white;  
+    }  
+  
+#clear{  
+	margin-top: 10px;
+	width: 315px;  
+	border: 2px solid gray;  
+    border-radius: 3px;  
+    padding: 5px;  
+    background-color: red;  
+	border-radius: .5em;
+}  
+  
+.formstyle  {  
+	background-color: rgba(0,0,0,0.6);
+	width: 320px;
+	height: 370px;
+	border-radius: .5em;
+	box-shadow: -3px -3px 7px #ffffff73,2px 2px 5px rgba(94, 104, 121, 0.288);
+	margin: 0 auto;
+	font-size: 12px;
+	padding: 32px 16px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}  
+    
+input{
+	background-color: #f3e6e8;
+	background-image: linear-gradient(315deg, #f3e6e8 0%, #d5d0e5 74%);
+	border-radius: 0.7em;
+	margin-left:7px;
+	height: 50px;
+	width: 70px;
+	text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+	transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+input:hover {
+ box-shadow: 0px 0.1em 0.2em rgb(45 35 66 / 40%), 0px 0.4em 0.7em -0.1em rgb(45 35 66 / 30%), inset 0px -0.1em 0px #3c4fe0;
+ transform: translateY(-0.2em);
+}
+  
+#calc{  
+	width: 300px;
+    height: 50px;
+	overflow-y: auto;
+	flex-direction: column;
+    box-shadow: inset 2px 2px 5px #babecc,inset -5px -5px 10px #ffffff73;  
+}  
+  
+</style>  
+  
+</head>  
+<body>  
+<img src="D:\projects\images\calc.jpg" class="bg"></img>
+<h1> Calculator Program in JavaScript </h1>  
+<b>
+<div class= "formstyle">  
+<form name = "form1">  
+      
+    <!-- This input box shows the button pressed by the user in calculator. -->  
+  <input id = "calc" type ="text" name = "answer"> <br> <br>  
+  <!-- Display the calculator button on the screen. -->  
+  <!-- onclick() function display the number prsses by the user. -->  
+  <input type = "button" value = "1" onclick = "form1.answer.value += '1' ">  
+  <input type = "button" value = "2" onclick = "form1.answer.value += '2' ">  
+  <input type = "button" value = "3" onclick = "form1.answer.value += '3' ">  
+  <input type = "button" value = "+" onclick = "form1.answer.value += '+' " style="color:red;">  
+  <br> <br>  
+    
+  <input type = "button" value = "4" onclick = "form1.answer.value += '4' ">  
+  <input type = "button" value = "5" onclick = "form1.answer.value += '5' ">  
+  <input type = "button" value = "6" onclick = "form1.answer.value += '6' ">  
+  <input type = "button" value = "-" onclick = "form1.answer.value += '-' " style="color:red;">  
+  <br> <br>  
+    
+  <input type = "button" value = "7" onclick = "form1.answer.value += '7' ">  
+  <input type = "button" value = "8" onclick = "form1.answer.value += '8' ">  
+  <input type = "button" value = "9" onclick = "form1.answer.value += '9' ">  
+  <input type = "button" value = "*" onclick = "form1.answer.value += '*' " style="color:red;">  
+  <br> <br>  
+    
+    
+  <input type = "button" value = "/" onclick = "form1.answer.value += '/' ">  
+  <input type = "button" value = "0" onclick = "form1.answer.value += '0' ">  
+    <input type = "button" value = "." onclick = "form1.answer.value += '.' ">  
+    <!-- When we click on the '=' button, the onclick() shows the sum results on the calculator screen. -->  
+  <input type = "button" value = "=" onclick = "form1.answer.value = eval(form1.answer.value) " style="color:red;">  
+  <br>   
+  <!-- Display the Cancel button and erase all data entered by the user. -->  
+  <input type = "button" value = "Clear All" onclick = "form1.answer.value = ' ' " id= "clear" >  
+  <br>   
+  </b>
+</form>  
+ 
+</div>
+</body>  
+</html>  

@@ -1,0 +1,253 @@
+<html>
+<head>
+    <title>HANGMAN</title>
+    <style>
+        body{
+            background: #34e89e;
+            background: linear-gradient(to right, #0f3443, #34e89e); 
+            color: white;
+            text-align: center;
+            font-size: 25px;
+        }
+        button{
+            padding: 17px 40px;
+            border-radius: 10px;
+            border: 1px solid #34e89e;
+            margin: 4px;
+            background-color: white;
+            box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-size: 15px;
+            transition: all .5s ease;
+        }
+        button:hover {
+            letter-spacing: 3px;
+            background-color:  #23c483;
+            color: hsl(0, 0%, 100%);
+            box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+            }
+
+        button:active {
+            background-color: #23c483;
+            box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+            transform: translateY(10px);
+            transition: 100ms;
+            }
+        canvas{
+            color: white;
+            border: white dashed 2px;
+            margin: 20px;
+            padding:15px;
+        }
+    </style>
+</head>
+<body onload="buttonFunction()">
+
+    <h2>HANGMAN GAME</h2>
+    <p>Use the alphabet below to guess the word, or click hint to get a clue. </p>
+    
+    <div id="buttons"></div>
+    <p id="catagoryName"></p>
+    <div id="hold">
+    
+    <p id="mylives"> </p>   
+    <p id="clue"></p>  
+    <div id="ans"> </div>
+    <canvas id="stickman" width = "400px" height = "150px">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
+    <div class="container">
+      <button id="hint" onclick="clue()">Hint</button>
+      <button id="reset" onclick="reset()">Play again</button>
+    </div>
+</div>
+<script>
+    catagory = ["CITY","MOVIE"];
+    clue_list = [["capital of india","capital of nepal"],["highest grossing movie","highest grossing indian movie"]];
+    answer = [["delhi","kathmandu"],["avengers","dangal"]];
+    cat = Math.floor(Math.random() * 2);
+    choice = Math.floor(Math.random() * 2);
+    str=[];
+    ans_len=answer[cat][choice].length;
+
+    show_cat();
+    show_ans(answer[cat][choice].length);
+    
+    //showing all lives
+    let lives = 10;
+    let counter = 0;
+    let correct = "no";
+    var show = document.getElementById("mylives");
+    show.innerHTML = "You have " + lives + " lives";
+    canvas();
+    
+    
+    function show_cat(){
+        var cat_show = document.getElementById("catagoryName");
+        if (cat == 0){
+            cat_show.innerHTML="CHOOSEN CATAGORY IS:" + catagory[0];
+        }   
+        else if(cat == 1){
+            cat_show.innerHTML="CHOOSEN CATAGORY IS:" + catagory[1];
+        }
+    }
+    
+    function fun_show(){
+        var ans_show = document.getElementById("ans");
+        let newstr="";
+        for(let i=0;i<str.length;i++){
+            newstr+= str[i];
+            newstr+=" "; 
+        }
+        ans_show.innerHTML = newstr;
+    }
+    
+    function show_ans(len) {
+        for(let i=0;i<len;i++){
+            str[i]="_";
+        }
+        fun_show();
+    }
+
+    function  check(x){
+        const geuss=x.innerHTML;
+        let ans = answer[cat][choice];
+        for (var i = 0; i < ans.length; i++) {
+            if (ans[i] == geuss) {
+                str[i] = geuss;
+                counter++;
+                correct = "yes";
+                }
+        }
+        if(correct == "yes"){
+            x.style.backgroundColor = "#7CFC00";
+            x.style.color = "white";
+            }
+        else{
+            x.style.backgroundColor = "red";
+            x.style.color = "white";
+            x.style.borderColor = "#8B0000";
+        }
+        showlives();
+        fun_show();
+    }
+
+    
+    //function to show lives
+    function showlives() {
+        if(correct != "yes"){
+            lives-=1;
+            canvas();
+            }
+        else{
+            correct = "no";
+        }
+        var show = document.getElementById("mylives");
+        show.innerHTML = "You have " + lives + " lives";
+        if (lives < 1) {
+            show.innerHTML = "Game Over";
+        }
+        else if(counter == ans_len){
+            show.innerHTML = "You Win";
+        }
+    }
+     
+    //function to show clue
+    function clue(){
+        var clue_show = document.getElementById("clue");
+        if (choice == 0){
+            clue_show.innerHTML="CLUE:-" + clue_list[cat][0];
+        }
+        else if(choice == 1){
+            clue_show.innerHTML="CLUE:-" + clue_list[cat][1];
+        }
+    }
+    
+    //function for loop for creating button
+    function buttonFunction() {
+        for(let i=0;i<26;i++){
+            create_button(i);    
+        }
+    }
+
+    
+  function canvas(){
+
+    var myStickman = document.getElementById("stickman");
+    var context = myStickman.getContext('2d');
+    context.beginPath();
+    context.strokeStyle = "#fff";
+    context.lineWidth = 2;
+    if(lives==9){
+        context.moveTo(0,150);
+        context.lineTo(150,150);
+        context.stroke(); 
+      }
+    else if(lives==8){
+        context.moveTo(10,0);
+        context.lineTo(10,300);
+        context.stroke();   
+    }
+    else if(lives==7){
+        context.moveTo(0,5);
+        context.lineTo(70,5);
+        context.stroke();   
+    }
+    else if(lives==6){
+        context.moveTo(60,5);
+        context.lineTo(60,15);
+        context.stroke();   
+    }
+    else if(lives==5){
+        context.arc(60, 25, 10, 0, Math.PI*2, true);
+        context.stroke(); 
+    }
+
+    else if(lives==4){
+        context.moveTo(60,36);
+        context.lineTo(60,70);
+        context.stroke();   
+    }
+    else if(lives==3){
+        context.moveTo(60,46);
+        context.lineTo(100,50);
+        context.stroke();   
+    }
+    else if(lives==2){
+        context.moveTo(60,46);
+        context.lineTo(20,50);
+        context.stroke();   
+    }
+    else if(lives==1){
+        context.moveTo(60,70);
+        context.lineTo(100,100);
+        context.stroke();   
+    }
+    else if(lives==0){
+        context.moveTo(60,70);
+        context.lineTo(20,100);
+        context.stroke();   
+    }
+  }
+  
+  
+
+    //function to create button
+    function create_button(i) {
+        let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h','i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's','t', 'u',   'v', 'w', 'x', 'y', 'z'];
+        x = document.createElement("button");
+        var t = document.createTextNode(alphabet[i]);
+        x.appendChild(t);
+        x.id = "alphabet";
+        x.setAttribute("onclick","check(this)");
+        document.getElementById("buttons").appendChild(x);
+    }
+
+    //function to reset 
+    function reset() {
+        location.reload();
+    }
+
+</script>
+</body>
+</html>
+
